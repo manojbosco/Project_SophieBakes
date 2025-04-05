@@ -1,0 +1,73 @@
+@using System.Globalization
+@model Project_SophieBakes.Models.Order  
+
+@{
+    ViewData["Title"] = "Order Confirmation";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-lg rounded">
+        <div class="card-body">
+            <h1 class="card-title text-center text-success">Thank you for your order!</h1>
+            <p class="card-text text-center">Your order has been placed successfully.</p>
+            <hr>
+
+            @if (Model != null)
+            {
+                <div class="border p-3 rounded">
+                    <p><strong>Order ID:</strong> @Model.OrderId</p>
+                    <p><strong>Order Date:</strong> @Model.OrderDate</p>
+                    <p><strong>Order Total:</strong> @Model.TotalAmount.ToString("C", new CultureInfo("en-IN"))</p>
+                    <p><strong>Order Status:</strong> @Model.Status</p>
+                    <p><strong>Payment Method:</strong> @Model.PaymentMethod</p> <!-- Display Payment Method -->
+                </div>
+
+                <h4 class="mt-4">Order Items:</h4>
+
+                @if (Model.OrderItems != null && Model.OrderItems.Any())
+                {
+                    <ul class="list-group">
+                        @foreach (var item in Model.OrderItems)
+                        {
+                            <li class="list-group-item">
+                                <strong>Product:</strong> @(item.Product?.ProductName ?? "Unknown") <br>
+                                <strong>Quantity:</strong> @item.Quantity <br>
+                                <strong>Price:</strong> @item.Price.ToString("C", new CultureInfo("en-IN"))                            </li>
+                        }
+                    </ul>
+                }
+                else
+                {
+                    <p class="text-danger">No items found in this order.</p>
+                }
+            }
+            else
+            {
+                <h2 class="text-danger text-center">Order not found.</h2>
+            }
+
+            <div class="text-center mt-4">
+                <a class="btn btn-primary btn-lg" href="/" role="button">Continue Shopping</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Back Button with Arrow, positioned at bottom-left -->
+<button onclick="window.history.back();" class="btn btn-secondary btn-lg back-btn">
+    <i class="fa fa-arrow-left"></i> Back
+</button>
+<style>
+    /* Back button styling */
+    .back-btn {
+        position: fixed;
+        left: 20px;
+        bottom: 20px;
+        font-size: 18px;
+        padding: 10px 20px;
+        border-radius: 8px;
+        background-color: #6c757d;
+        color: white;
+        border: none;
+        transition: background 0.3s ease-in-out;
+    }
+</style>

@@ -1,0 +1,168 @@
+﻿@model HomeViewModel
+
+<div class="container mt-3">
+    @if (User.Identity.IsAuthenticated)
+    {
+        <h2>Welcome, @User.Identity.Name!</h2>
+    }
+    else
+    {
+        <h2>Welcome to SophieBakes!</h2>
+    }
+</div>
+
+<h2>@ViewData["Message"]</h2>
+
+<div class="category-buttons">
+    <button class="category-btn" onclick="filterProducts('All')">All</button>
+    <button class="category-btn" onclick="filterProducts('Cakes')">Cakes</button>
+    <button class="category-btn" onclick="filterProducts('Cupcakes')">Cupcakes</button>
+    <button class="category-btn" onclick="filterProducts('Others')">Others</button>
+</div>
+
+<!-- Product Container -->
+<div class="product-container">
+    @if (Model?.Products != null && Model.Products.Any())
+    {
+        @foreach (var product in Model.Products)
+        {
+            <div class="product-box product @(product?.Category?.Name?.ToLower())">
+                <img src="@product?.ImageUrl" alt="@product?.ProductName" class="product-image" />
+                <h3>@product?.ProductName</h3>
+                <p>@product?.Description</p>
+                <p>Price: @(product?.Price.ToString("C"))</p>
+
+                <!-- ✅ Add to Cart Button (with AJAX) -->
+                <button 
+                    onclick="addToCart(@product.ProductId, '@product.ProductName')" 
+                    class="btn btn-primary add-to-cart-btn" 
+                    id="btn-@product.ProductId">
+                    Add to Cart
+                </button>
+            </div>
+        }
+    }
+    else
+    {
+        <p>No products available.</p>
+    }
+</div>
+
+<script src="~/js/categoryFilter.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    function addToCart(productId, productName) {
+        $.ajax({
+            url: '/Cart/AddToCart',
+            type: 'POST',
+            data: { productId: productId },
+            success: function (response) {
+                if (response.success) {
+                    // ✅ Update Cart Count
+                    updateCartCount();
+
+                    // ✅ Show Success Message
+                    Swal.fire({
+                        title: 'Added to Cart!',
+                        text: productName + ' has been added to your cart.',
+                        icon: 'success',
+                        timer: 2000,
+                        showConfirmButton: false
+                    });
+
+                    // ✅ Disable Button to Avoid Duplicate Add
+                    $("#btn-" + productId).prop('disabled', true);
+                    $("#btn-" + productId).text('Added ✔');
+                }
+                else {
+                    Swal.fire({
+                        title: 'Oops!',
+                        text: 'Something went wrong. Please try again.',
+                        icon: 'error'
+                    });
+                }
+            }
+        });
+    }
+
+    function updateCartCount() {
+        $.ajax({
+            url: '/Cart/GetCartCount',
+            type: 'GET',
+            success: function (count) {
+                $('#cartCount').text(count);
+            }
+        });
+    }
+</script>
+
+<style>
+    .product-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .product-box {
+        border: 1px solid #ddd;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        text-align: center;
+    }
+
+    .product-image {
+        width: 100%;
+        height: auto;
+        max-width: 150px;
+        margin-bottom: 10px;
+    }
+
+    .product h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .product p {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .product-box button {
+        padding: 10px 15px;
+        background-color: #6a0dad;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .product-box button:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+    }
+
+    .category-buttons {
+        margin: 20px 0;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .category-btn {
+        padding: 10px 15px;
+        margin: 5px;
+        background-color: #6a0dad;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .category-btn:hover {
+        background-color: #8a2be2;
+    }
+</style>

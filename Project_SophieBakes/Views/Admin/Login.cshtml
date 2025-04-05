@@ -1,0 +1,56 @@
+@model Project_SophieBakes.Models.AdminLoginViewModel
+
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="card shadow p-4" style="width: 380px; border-radius: 10px;">
+        <h2 class="text-center mb-4">Admin Login</h2>
+        <form asp-controller="Admin" asp-action="Login" method="post">
+            <div class="mb-3">
+                <label for="Username" class="form-label">Username</label>
+                <input asp-for="Username" class="form-control form-control-lg" placeholder="Enter username" />
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label for="Password" class="form-label">Password</label>
+                <input asp-for="Password" type="password" class="form-control form-control-lg" placeholder="Enter password" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100 btn-lg">Login</button>
+        </form>
+    </div>
+    
+    <!-- Back Button -->
+    <button onclick="window.history.back();" class="btn btn-secondary back-btn">
+        <i class="fa fa-arrow-left me-2"></i> Back
+    </button>
+</div>
+
+<style>
+   
+
+    /* Card styling */
+    .card {
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        background: #ffffff;
+    }
+
+    /* Back button styling */
+    .back-btn {
+        position: fixed;
+        left: 20px;
+        bottom: 20px;
+        font-size: 18px;
+        padding: 10px 20px;
+        border-radius: 8px;
+        background-color: #6c757d;
+        color: white;
+        border: none;
+        transition: background 0.3s ease-in-out;
+    }
+
+    .back-btn:hover {
+        background-color: #5a6268;
+    }
+</style>

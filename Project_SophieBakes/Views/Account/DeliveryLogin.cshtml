@@ -1,0 +1,53 @@
+@model Project_SophieBakes.Models.DeliveryLoginViewModel
+@{
+    ViewData["Title"] = "Delivery Boy Login";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-warning text-center">
+                    <h4 class="text-dark">Delivery Boy Login</h4>
+                </div>
+                <div class="card-body">
+                    @if (TempData["Error"] != null)
+                    {
+                        <div class="alert alert-danger">@TempData["Error"]</div>
+                    }
+
+                    <form asp-controller="Account" asp-action="DeliveryLogin" method="post">
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" asp-for="Email" required />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Password</label>
+                            <input type="password" class="form-control" asp-for="Password" required />
+                        </div>
+                        <button type="submit" class="btn btn-warning w-100 text-dark">Login</button>
+                    </form>
+                    <!-- Back Button with Arrow, positioned at bottom-left -->
+                    <button onclick="window.history.back();" class="btn btn-secondary btn-lg back-btn">
+                        <i class="fa fa-arrow-left"></i> Back
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    /* Back button styling */
+    .back-btn {
+        position: fixed;
+        left: 20px;
+        bottom: 20px;
+        font-size: 18px;
+        padding: 10px 20px;
+        border-radius: 8px;
+        background-color: #6c757d;
+        color: white;
+        border: none;
+        transition: background 0.3s ease-in-out;
+    }
+</style>

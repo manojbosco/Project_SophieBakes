@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="9.0.2" />
+      <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="9.0.2" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.2">
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        <PrivateAssets>all</PrivateAssets>
+      </PackageReference>
+      <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="9.0.2" />
+      <PackageReference Include="MySql.Data" Version="9.2.0" />
+      <PackageReference Include="MySql.EntityFrameworkCore" Version="9.0.0" />
+      <PackageReference Include="MySqlConnector" Version="2.4.0" />
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+      <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="9.0.0-preview.3.efcore.9.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Migrations\" />
+      <Folder Include="wwwroot\Images\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Views\Admin\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Admin\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Cart\Cart.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Cart\EmptyCart.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Cart\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Cart\OrderConfirmation.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Cart\Payment.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Cart\Checkout.cshtml" />
+    </ItemGroup>
+
+</Project>

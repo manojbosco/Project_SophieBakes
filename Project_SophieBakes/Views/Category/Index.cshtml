@@ -1,0 +1,25 @@
+@model IEnumerable<Project_SophieBakes.Models.Category>
+
+
+<h1>Products by Category</h1>
+
+@foreach (var category in Model)
+{
+    <h2>@category.Name</h2>
+    <div class="row">
+        @foreach (var product in category.Products)
+        {
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="@product.ImageUrl" class="card-img-top" alt="@product.ProductName" />
+                    <div class="card-body">
+                        <h5 class="card-title">@product.ProductName</h5>
+                        <p class="card-text">@product.Description</p>
+                        <p class="card-text">Price: @product.Price.ToString("C")</p>
+                        <a asp-action="Details" asp-controller="Product" asp-route-id="@product.ProductId" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}

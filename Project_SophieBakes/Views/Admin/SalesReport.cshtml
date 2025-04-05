@@ -1,0 +1,97 @@
+@model Project_SophieBakes.ViewModels.SalesReportViewModel
+
+@{
+    ViewData["Title"] = "Sales Report";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-lg rounded-lg">
+        <div class="card-body">
+            <h2 class="text-center text-primary mb-4">Sales Report</h2>
+
+            <div class="report-container">
+                <h4 class="text-success">Total Sales: @Model.TotalSales.ToString("C", System.Globalization.CultureInfo.CurrentCulture)</h4>
+
+                <form asp-action="SalesReport" method="get" class="mb-4">
+                    <div class="form-group">
+                        <label for="userId" class="form-label">Filter by User ID</label>
+                        <input type="text" id="userId" name="userId" class="form-control" placeholder="Enter User ID" />
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Search</button>
+                </form>
+
+                @if (Model.UserSales > 0)
+                {
+                    <div class="mt-4">
+                        <h4 class="text-info">Sales for User (@Model.SelectedUserId)</h4>
+                        <p>Total Sales: @Model.UserSales.ToString("C", System.Globalization.CultureInfo.CurrentCulture)</p>
+                    </div>
+                }
+
+                <!-- Back Button with Arrow, positioned at bottom-left -->
+                <button onclick="window.history.back();" class="btn btn-secondary btn-lg back-btn">
+                    <i class="fa fa-arrow-left"></i> Back
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Font Awesome CDN -->
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+<style>
+
+
+    .card {
+        border: none;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-block {
+        width: 50%;
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .form-label {
+        font-weight: 600;
+    }
+
+    .card-body {
+        padding: 2rem;
+    }
+
+    .text-primary {
+        color: #007bff !important;
+    }
+
+    .text-info {
+        color: #17a2b8 !important;
+    }
+
+    .text-success {
+        color: #28a745 !important;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    /* Back button styling */
+    .back-btn {
+        position: fixed;
+        left: 20px;
+        bottom: 20px;
+        font-size: 18px;
+        padding: 10px 20px;
+        border-radius: 8px;
+        background-color: #6c757d;
+        color: white;
+        border: none;
+        transition: background 0.3s ease-in-out;
+    }
+
+</style>

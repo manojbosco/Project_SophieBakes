@@ -1,0 +1,405 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/obj/Debug/net9.0/scopedcss/projectbundle/Project_SophieBakes.bundle.scp.css",
+      "PackagePath": "staticwebassets/Project_SophieBakes.8wflx4nzer.bundle.scp.css"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/Images/Almond Biscotti.jpg",
+      "PackagePath": "staticwebassets/Images/Almond Biscotti.jpg"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/Images/Apple Pie.jpg",
+      "PackagePath": "staticwebassets/Images/Apple Pie.jpg"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/Images/Banana Bread.jpg",
+      "PackagePath": "staticwebassets/Images/Banana Bread.jpg"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/Images/Brownies.jpg",
+      "PackagePath": "staticwebassets/Images/Brownies.jpg"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/Images/Carrot Cake.jpg",
+      "PackagePath": "staticwebassets/Images/Carrot Cake.jpg"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/Images/Cheesecake.jpg",
+      "PackagePath": "staticwebassets/Images/Cheesecake.jpg"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/Images/Chocolate Chip Cookies.jpg",
+      "PackagePath": "staticwebassets/Images/Chocolate Chip Cookies.jpg"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/Images/Chocolate Eclair.jpg",
+      "PackagePath": "staticwebassets/Images/Chocolate Eclair.jpg"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/Images/Chocolate Fondant.jpg",
+      "PackagePath": "staticwebassets/Images/Chocolate Fondant.jpg"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/Images/Chocolate Mousse.jpg",
+      "PackagePath": "staticwebassets/Images/Chocolate Mousse.jpg"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/Images/Coconut Cream Pie.jpg",
+      "PackagePath": "staticwebassets/Images/Coconut Cream Pie.jpg"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/Images/Cupcake Assortment.jpg",
+      "PackagePath": "staticwebassets/Images/Cupcake Assortment.jpg"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/Images/Fruit Cake.jpg",
+      "PackagePath": "staticwebassets/Images/Fruit Cake.jpg"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/Images/IMG_0422.jpg",
+      "PackagePath": "staticwebassets/Images/IMG_0422.jpg"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/Images/Lemon Tart.jpg",
+      "PackagePath": "staticwebassets/Images/Lemon Tart.jpg"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/Images/Mango Mousse.jpg",
+      "PackagePath": "staticwebassets/Images/Mango Mousse.jpg"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/Images/Oreo Cheesecake.jpg",
+      "PackagePath": "staticwebassets/Images/Oreo Cheesecake.jpg"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/Images/Peach Cobbler.jpg",
+      "PackagePath": "staticwebassets/Images/Peach Cobbler.jpg"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/Images/Pineapple Upside Down Cake.jpg",
+      "PackagePath": "staticwebassets/Images/Pineapple Upside Down Cake.jpg"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/Images/Pistachio Cake.jpg",
+      "PackagePath": "staticwebassets/Images/Pistachio Cake.jpg"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/Images/Raspberry Tart.jpg",
+      "PackagePath": "staticwebassets/Images/Raspberry Tart.jpg"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/Images/Strawberry Shortcake.jpg",
+      "PackagePath": "staticwebassets/Images/Strawberry Shortcake.jpg"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/Images/Tiramisu.jpg",
+      "PackagePath": "staticwebassets/Images/Tiramisu.jpg"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/Images/background.png",
+      "PackagePath": "staticwebassets/Images/background.png"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/Images/chocolate-cake.jpg",
+      "PackagePath": "staticwebassets/Images/chocolate-cake.jpg"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/Images/red-velvet-cake.jpg",
+      "PackagePath": "staticwebassets/Images/red-velvet-cake.jpg"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/Images/sophiebakes.png",
+      "PackagePath": "staticwebassets/Images/sophiebakes.png"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/Images/vanilla-cupcake.jpg",
+      "PackagePath": "staticwebassets/Images/vanilla-cupcake.jpg"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/css/site.css",
+      "PackagePath": "staticwebassets/css/site.css"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/favicon.ico",
+      "PackagePath": "staticwebassets/favicon.ico"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/js/cart.js",
+      "PackagePath": "staticwebassets/js/cart.js"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/js/categoryFilter.js",
+      "PackagePath": "staticwebassets/js/categoryFilter.js"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/js/site.js",
+      "PackagePath": "staticwebassets/js/site.js"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/js/updatequantity.js",
+      "PackagePath": "staticwebassets/js/updatequantity.js"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/bootstrap/LICENSE",
+      "PackagePath": "staticwebassets/lib/bootstrap"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.css"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.css.map"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.min.css"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.css"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.css"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/bootstrap/dist/css/bootstrap.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.css"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/bootstrap/dist/css/bootstrap.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.css.map"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.min.css"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.min.css.map"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.css"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.js"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.js"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.js.map"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.min.js"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/bootstrap/dist/js/bootstrap.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.js"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/bootstrap/dist/js/bootstrap.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.js.map"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.min.js"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.min.js.map"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/jquery-validation-unobtrusive/LICENSE.txt",
+      "PackagePath": "staticwebassets/lib/jquery-validation-unobtrusive/LICENSE.txt"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/jquery-validation/LICENSE.md",
+      "PackagePath": "staticwebassets/lib/jquery-validation/LICENSE.md"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/jquery-validation/dist/additional-methods.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation/dist/additional-methods.js"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/jquery-validation/dist/additional-methods.min.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation/dist/additional-methods.min.js"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/jquery-validation/dist/jquery.validate.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation/dist/jquery.validate.js"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/jquery-validation/dist/jquery.validate.min.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation/dist/jquery.validate.min.js"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/jquery/LICENSE.txt",
+      "PackagePath": "staticwebassets/lib/jquery/LICENSE.txt"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/jquery/dist/jquery.js",
+      "PackagePath": "staticwebassets/lib/jquery/dist/jquery.js"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/jquery/dist/jquery.min.js",
+      "PackagePath": "staticwebassets/lib/jquery/dist/jquery.min.js"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/jquery/dist/jquery.min.map",
+      "PackagePath": "staticwebassets/lib/jquery/dist/jquery.min.map"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/jquery/dist/jquery.slim.js",
+      "PackagePath": "staticwebassets/lib/jquery/dist/jquery.slim.js"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/jquery/dist/jquery.slim.min.js",
+      "PackagePath": "staticwebassets/lib/jquery/dist/jquery.slim.min.js"
+    },
+    {
+      "Id": "/Users/manojbosco/RiderProjects/Project_SophieBakes/Project_SophieBakes/wwwroot/lib/jquery/dist/jquery.slim.min.map",
+      "PackagePath": "staticwebassets/lib/jquery/dist/jquery.slim.min.map"
+    },
+    {
+      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.Project_SophieBakes.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.Project_SophieBakes.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.build.Project_SophieBakes.props",
+      "PackagePath": "build\\Project_SophieBakes.props"
+    },
+    {
+      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.buildMultiTargeting.Project_SophieBakes.props",
+      "PackagePath": "buildMultiTargeting\\Project_SophieBakes.props"
+    },
+    {
+      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.buildTransitive.Project_SophieBakes.props",
+      "PackagePath": "buildTransitive\\Project_SophieBakes.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

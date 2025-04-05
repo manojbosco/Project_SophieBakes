@@ -1,0 +1,113 @@
+@model SophieBakes.Models.PaymentViewModel
+@{
+    ViewData["Title"] = "Payment Page";
+}
+
+<div class="container mt-4">
+    <div class="card shadow-lg p-4">
+        <h2 class="text-center">Payment Details</h2>
+
+        <div id="paymentForm">
+            @Html.AntiForgeryToken()
+            <input type="hidden" id="OrderId" value="@Model.OrderId" />
+
+            <div class="mb-4">
+                <h4>Order Summary</h4>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.CartItems)
+                        {
+                            <tr>
+                                <td>@item.ProductName</td>
+                                <td>₹@item.Price.ToString("N2")</td>
+                                <td>@item.Quantity</td>
+                                <td>₹@item.TotalPrice.ToString("N2")</td>
+                            </tr>
+                        }
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3" class="text-end"><strong>Total Amount:</strong></td>
+                            <td><strong>₹@Model.Amount.ToString("N2")</strong></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="PaymentMethod" class="form-label">Payment Method</label>
+                <select id="PaymentMethod" class="form-select" required>
+                    <option value="">Select Payment Method</option>
+                    <option value="Cash on Delivery">Cash on Delivery</option>
+                    <option value="UPI">UPI</option>
+                    <option value="Credit/Debit Card">Credit/Debit Card</option>
+                </select>
+                <div class="invalid-feedback">Please select a payment method.</div>
+            </div>
+
+            <div class="form-group mb-3">
+                <label class="form-label">Email</label>
+                <input type="text" value="@Model.Email" readonly class="form-control"/>
+            </div>
+
+            <button type="button" id="confirmPaymentBtn" class="btn btn-success btn-lg w-100">
+                Confirm Payment
+            </button>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            $("#confirmPaymentBtn").click(function() {
+                const paymentMethod = $("#PaymentMethod").val();
+                if (!paymentMethod) {
+                    alert("Please select a payment method");
+                    return;
+                }
+
+                const token = $('input[name="__RequestVerificationToken"]').val();
+                
+                const data = {
+                    OrderId: @Model.OrderId,
+                    PaymentMethod: paymentMethod,
+                    Amount: @Model.Amount,
+                    Email: "@Model.Email",
+                    UserId: "@Model.UserId",
+                    PaymentDate: "@Model.PaymentDate.ToString("yyyy-MM-dd HH:mm:ss")",
+                    PaymentStatus: "Pending"
+                };
+
+                $.ajax({
+                    url: '@Url.Action("ProcessPayment", "Checkout")',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify(data),
+                    headers: {
+                        'RequestVerificationToken': token
+                    },
+                    success: function(response) {
+                        if (response.success) {
+                            window.location.href = response.redirectUrl;
+                        } else {
+                            alert(response.message || 'An error occurred. Please try again.');
+                        }
+                    },
+                    error: function(xhr) {
+                        console.error('Payment error:', xhr);
+                        alert('An error occurred while processing your payment. Please try again.');
+                    }
+                });
+            });
+        });
+    </script>
+}

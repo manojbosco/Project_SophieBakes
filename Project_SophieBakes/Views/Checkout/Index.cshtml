@@ -1,0 +1,162 @@
+@model List<Project_SophieBakes.Models.CartItem>
+@{
+    decimal totalAmount = Model?.Sum(item => item.Quantity * item.Price) ?? 0;
+}
+
+<div class="container mt-4">
+    <div class="card shadow-lg p-4">
+        <h2 class="text-center">Payment Details</h2>
+
+        @if (Model == null || !Model.Any())
+        {
+            <div class="text-center">
+                <h4 class="text-muted">Your cart is empty.</h4>
+                <a href="/" class="btn btn-primary mt-3">Continue Shopping</a>
+            </div>
+        }
+        else
+        {
+            <table class="table table-bordered mt-3">
+                <thead class="thead-dark">
+                <tr>
+                    <th>Image</th>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr data-product-id="@item.ProductId">
+                        <td>
+                            <img src="@(!string.IsNullOrEmpty(item.ImageUrl) ? item.ImageUrl : "/images/default.png")"
+                                 alt="Product Image" width="80" />
+                        </td>
+
+                        <td>@item.ProductName</td>
+                        <td>₹ @item.Price.ToString("0.00")</td>
+                        <td>@item.Quantity</td>
+                        <td>₹ @((item.Quantity * item.Price).ToString("0.00"))</td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+
+            <h3><strong>Total: ₹ @totalAmount.ToString("0.00")</strong></h3>
+
+            <form id="placeOrderForm" method="post">
+                @Html.AntiForgeryToken()
+
+                <!-- Payment Method Selection -->
+                <div class="form-group mb-3">
+                    <label for="PaymentMethod" class="form-label">Payment Method</label>
+                    <select id="PaymentMethod" class="form-select" required>
+                        <option value="">Select Payment Method</option>
+                        <option value="Cash on Delivery">Cash on Delivery</option>
+                        <option value="UPI">UPI</option>
+                        <option value="Credit/Debit Card">Credit/Debit Card</option>
+                    </select>
+                    <div class="invalid-feedback">Please select a payment method.</div>
+                </div>
+
+                <button id="placeOrderButton" class="btn btn-success btn-lg"> Pay Now </button>
+            </form>
+
+            <div class="mt-4">
+                <h4>Order Summary</h4>
+                <ul class="list-group">
+                    @foreach (var item in Model)
+                    {
+                        <li class="list-group-item">
+                            @item.ProductName - ₹ @item.Price.ToString("0.00") x @item.Quantity =
+                            ₹ @((item.Quantity * item.Price).ToString("0.00"))
+                        </li>
+                    }
+                </ul>
+                <h5 class="mt-3"><strong>Total: ₹ @totalAmount.ToString("0.00")</strong></h5>
+            </div>
+        }
+    </div>
+</div>
+<!-- Back Button with Arrow, positioned at bottom-left -->
+<button onclick="window.history.back();" class="btn btn-secondary btn-lg back-btn">
+    <i class="fa fa-arrow-left"></i> Back
+</button>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#placeOrderButton').click(function (e) {
+            e.preventDefault(); // Prevent the default form submission
+
+            // Collect cart data from the table
+            var cartData = [];
+            $('tbody tr').each(function () {
+                var productId = $(this).data('product-id');
+                var quantity = parseInt($(this).find('td:nth-child(4)').text().trim()); // Get quantity
+                var price = parseFloat($(this).find('td:nth-child(3)').text().replace('₹', '').trim()); // Get price
+
+                cartData.push({
+                    ProductId: productId,
+                    Quantity: quantity,
+                    Price: price,
+                    TotalPrice: quantity * price  // Calculate and include TotalPrice
+                });
+            });
+
+            // Get selected payment method
+            var paymentMethod = $('#PaymentMethod').val();
+            if (!paymentMethod) {
+                alert('Please select a payment method.');
+                return; // Stop if payment method is not selected
+            }
+
+            var token = $('input[name="__RequestVerificationToken"]').val(); // Get anti-forgery token
+
+            // Make the AJAX call
+            $.ajax({
+                type: 'POST',
+                url: '/Cart/PlaceOrder', // The URL is now /Cart/PlaceOrder
+                contentType: 'application/json; charset=utf-8',
+                data: JSON.stringify({ 
+                    cartItems: cartData,
+                    paymentMethod: paymentMethod // Include payment method in the request data
+                }),
+                headers: {
+                    'RequestVerificationToken': token // Include the anti-forgery token
+                },
+                success: function (response) {
+                    if (response.success) {
+                        // Redirect to order confirmation page on success
+                        window.location.href = '/Checkout/OrderConfirmation?orderId=' + response.orderId;
+                    } else {
+                        // Display an error message to the user
+                        alert('Error: ' + response.message);
+                    }
+                },
+                error: function (xhr, status, error) {
+                    // Handle AJAX errors
+                    console.error('AJAX Error:', status, error);
+                    alert('An error occurred while processing your order. Please try again.');
+                }
+            });
+        });
+    });
+</script>
+<style>
+    /* Back button styling */
+    .back-btn {
+        position: fixed;
+        left: 20px;
+        bottom: 20px;
+        font-size: 18px;
+        padding: 10px 20px;
+        border-radius: 8px;
+        background-color: #6c757d;
+        color: white;
+        border: none;
+        transition: background 0.3s ease-in-out;
+    }
+</style>

@@ -1,0 +1,66 @@
+@using Project_SophieBakes.Models
+@model List<CartItem>
+
+
+<div id="cart-container">
+    @if (Model != null && Model.Count > 0)
+    {
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>Image</th>
+                <th>Product Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td><img src="@item.Product.ImageUrl" width="80" /></td>
+                    <td>@item.Product.ProductName</td>
+                    <td>@item.Product.Price.ToString("C")</td>
+                    <td>
+                        <input type="number" class="quantity" data-product-id="@item.ProductId" 
+                               value="@item.Quantity" min="1" />
+                    </td>
+                    <td>@(item.Quantity * item.Product.Price)</td>
+                    <td>
+                        <button class="remove-item btn btn-danger" data-product-id="@item.ProductId">
+                            Remove
+                        </button>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+
+        <h4 id="total">Total: $@(Model.Sum(i => i.Product.Price * i.Quantity).ToString("0.00"))</h4>
+    }
+    else
+    {
+        <p>Your cart is empty.</p>
+    }
+</div>
+<!-- Back Button with Arrow, positioned at bottom-left -->
+<button onclick="window.history.back();" class="btn btn-secondary btn-lg back-btn">
+    <i class="fa fa-arrow-left"></i> Back
+</button>
+<style>
+    /* Back button styling */
+    .back-btn {
+        position: fixed;
+        left: 20px;
+        bottom: 20px;
+        font-size: 18px;
+        padding: 10px 20px;
+        border-radius: 8px;
+        background-color: #6c757d;
+        color: white;
+        border: none;
+        transition: background 0.3s ease-in-out;
+    }
+</style>

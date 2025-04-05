@@ -1,0 +1,94 @@
+@model List<Project_SophieBakes.Models.Order>
+
+@{
+    ViewData["Title"] = "My Orders";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">My Orders</h2>
+    
+    @if (Model != null && Model.Any())
+    {
+        @foreach (var order in Model)
+        {
+            <div class="card mb-4 shadow-sm border-light">
+                <div class="card-body">
+                    <h5 class="card-title text-primary">Order ID: @order.OrderId</h5>
+                    <p class="card-text"><strong>Order Date:</strong> @order.OrderDate</p>
+                    <p class="card-text"><strong>Total:</strong> ₹@order.TotalAmount.ToString("F2")</p> <!-- Formatted to 2 decimal places -->
+
+                    <p class="card-text"><strong>Status:</strong> @order.Status</p>
+
+                    <hr class="my-3">
+                    
+                    <h6 class="font-weight-bold">Order Items:</h6>
+                    <ul class="list-group list-group-flush">
+                        @foreach (var item in order.OrderItems)
+                        {
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span>@(item.Product?.ProductName ?? "Unknown")</span>
+                                <span class="badge badge-secondary">Qty: @item.Quantity</span>
+                                <span class="badge badge-primary">₹@item.Price</span>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <div class="alert alert-info text-center">No orders found.</div>
+    }
+
+    <div class="text-center mt-4">
+        <a class="btn btn-lg btn-success" href="/">Continue Shopping</a>
+    </div>
+</div>
+<!-- Back Button with Arrow, positioned at bottom-left -->
+<button onclick="window.history.back();" class="btn btn-secondary btn-lg back-btn">
+    <i class="fa fa-arrow-left"></i> Back
+</button>
+
+<style>
+    .card {
+        border-radius: 10px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-title {
+        font-size: 1.5rem;
+    }
+
+    .card-text {
+        font-size: 1.1rem;
+    }
+
+    .list-group-item {
+        font-size: 1.1rem;
+        background-color: #f9f9f9;
+    }
+
+    .badge {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .alert-info {
+        font-size: 1.2rem;
+        padding: 1rem;
+    }
+    /* Back button styling */
+    .back-btn {
+        position: fixed;
+        left: 20px;
+        bottom: 20px;
+        font-size: 18px;
+        padding: 10px 20px;
+        border-radius: 8px;
+        background-color: #6c757d;
+        color: white;
+        border: none;
+        transition: background 0.3s ease-in-out;
+    }
+</style>

@@ -1,0 +1,159 @@
+/* General Page Styling */
+body {
+  background-image: url('/images/IMG_0422.jpg'); /* Replace with your image path */
+  background-size: cover; /* Ensures full-screen background */
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar Styling */
+.navbar {
+  background-color: #6a0dad; /* Deep purple shade */
+  padding: 15px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 15px;
+}
+.navbar-nav .nav-link {
+  color: black !important; /* Ensures visibility */
+  font-weight: bold;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #007bff !important; /* Changes color on hover */
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+.navbar .title {
+  color: black !important; /* Ensure text is black */
+  font-size: 24px; /* Adjust font size */
+  font-weight: bold; /* Make it stand out */
+  text-decoration: none; /* Remove any underline */
+  display: block; /* Ensure visibility */
+  visibility: visible !important; /* Prevent it from being hidden */
+  background-color: transparent; /* Prevent unwanted background */
+}
+
+
+/* Product List Styling */
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Spacing between products */
+  justify-content: center;
+  padding: 40px;
+}
+
+/* Product Card Styling */
+.product {
+  flex: 1 1 calc(25% - 20px); /* Responsive grid */
+  box-sizing: border-box;
+  padding: 20px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Smooth shadow */
+  background-color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px; /* Smooth rounded corners */
+  text-align: center;
+  max-width: 250px; /* Set max width */
+}
+
+.product:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Product Image */
+.product img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.cart-badge {
+  font-size: 12px;
+  padding: 5px 8px;
+  color: white;
+  background-color: red;
+}
+
+/* Add to Cart Button */
+.add-to-cart {
+  background-color: #28a745; /* Green button */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+  display: inline-block; /* Ensure it behaves as a block element */
+  text-align: center; /* Center align the text */
+}
+
+.add-to-cart:hover {
+  background-color: #218838; /* Darker green on hover */
+}
+
+/* Popup Modal for User Not Logged In */
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  z-index: 1000;
+}
+
+.popup button {
+  margin-top: 15px;
+  background-color: #6a0dad;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.popup button:hover {
+  background-color: #5a0da0;
+}
+.cart-container {
+  opacity: 1;
+  visibility: visible;
+}
+h2 {
+  font-size: 1.8rem; /* Adjust this size */
+  text-align: center;
+  font-weight: bold;
+}
+.my-orders-heading {
+  color: black; /* Change text color to black */
+  margin-left: 20px; /* Adjust spacing closer to 'SophieBakes' */
+  display: inline-block; /* Prevent line break */
+  font-weight: bold; /* Make it bold for better visibility */
+}
+
+

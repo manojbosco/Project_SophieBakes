@@ -1,0 +1,16 @@
+@model List<Project_SophieBakes.Models.Product> 
+ 
+@foreach (var product in Model) 
+{ 
+    <div class="col-md-3"> 
+        <div class="card"> 
+            <img src="@product.ImageUrl" class="card-img-top" alt="@product.ProductName"> 
+            <div class="card-body"> 
+                <h5 class="card-title">@product.ProductName</h5> 
+                <p class="card-text">@product.Description</p> 
+                <p class="card-text"><strong>Price: ₹ @product.Price</strong></p> 
+                <button class="btn btn-primary addToCart" data-id="@product.ProductId">Add to Cart</button> 
+            </div> 
+        </div> 
+    </div> 
+}

@@ -1,0 +1,61 @@
+@model IEnumerable<Feedback>
+
+<div class="container mt-4">
+    <div class="card shadow-lg p-4 rounded">
+        <h2 class="text-center mb-4">Customer Feedback</h2>
+
+        @if (User.Identity.IsAuthenticated)
+        {
+            <div class="mb-4">
+                <form asp-controller="Feedback" asp-action="SubmitFeedback" method="post" class="p-3 border rounded bg-light">
+                    <div class="mb-3">
+                        <textarea name="comment" required placeholder="Write your feedback..." class="form-control"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Rating:</label>
+                        <select name="rating" required class="form-select">
+                            <option value="5">⭐⭐⭐⭐⭐</option>
+                            <option value="4">⭐⭐⭐⭐</option>
+                            <option value="3">⭐⭐⭐</option>
+                            <option value="2">⭐⭐</option>
+                            <option value="1">⭐</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Submit</button>
+                </form>
+            </div>
+        }
+
+        <div class="feedback-list">
+            @foreach (var feedback in Model)
+            {
+                <div class="card mb-3 p-3 shadow-sm border">
+                    <div class="card-body">
+                        <h5 class="card-title">@feedback.UserName</h5>
+                        <h6 class="text-muted">@feedback.CreatedAt.ToString("MMM dd, yyyy")</h6>
+                        <p class="mb-1">Rating: <span class="text-warning">@(new string('⭐', feedback.Rating))</span></p>
+                        <p class="card-text">@feedback.Comment</p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<button onclick="window.history.back();" class="btn btn-secondary btn-lg back-btn">
+    <i class="fa fa-arrow-left"></i> Back
+</button>
+<style>
+    /* Back button styling */
+    .back-btn {
+        position: fixed;
+        left: 20px;
+        bottom: 20px;
+        font-size: 18px;
+        padding: 10px 20px;
+        border-radius: 8px;
+        background-color: #6c757d;
+        color: white;
+        border: none;
+        transition: background 0.3s ease-in-out;
+    }
+</style>

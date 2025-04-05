@@ -1,0 +1,41 @@
+@model IEnumerable<Feedback>
+
+<div class="container mt-4">
+    <div class="card shadow-lg p-4 rounded">
+        <h2 class="text-center mb-4">All Customer Feedback</h2>
+
+        <div class="feedback-list">
+            @foreach (var feedback in Model)
+            {
+                <div class="card mb-3 p-3 shadow-sm border">
+                    <div class="card-body">
+                        <h5 class="card-title">@feedback.UserName </h5>
+                        <h6 class="text-muted">@feedback.CreatedAt.ToString("MMM dd, yyyy hh:mm tt")</h6>
+                        <p class="mb-1">Rating: <span class="text-warning">@(new string('⭐', feedback.Rating))</span></p>
+                        <p class="card-text">@feedback.Comment</p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<!-- Fixed Back Button -->
+<button onclick="window.history.back();" class="btn btn-secondary btn-lg back-btn">
+    <i class="fa fa-arrow-left"></i> Back
+</button>
+
+<style>
+    .back-btn {
+        position: fixed;
+        left: 20px;
+        bottom: 20px;
+        font-size: 18px;
+        padding: 10px 20px;
+        border-radius: 8px;
+        background-color: #6c757d;
+        color: white;
+        border: none;
+        transition: background 0.3s ease-in-out;
+        z-index: 1000;
+    }
+</style>

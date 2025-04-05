@@ -1,0 +1,141 @@
+﻿@using Microsoft.AspNetCore.Http
+@using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@inject IHttpContextAccessor HttpContextAccessor
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>@ViewData["Title"] - Project_SophieBakes</title>
+    
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/Project_SophieBakes.styles.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+</head>
+
+<body>
+@{
+    var user = await UserManager.GetUserAsync(User);
+    var userRole = user != null ? (await UserManager.GetRolesAsync(user)).FirstOrDefault() : "";
+}
+
+<header>
+    <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container">
+            <a class="navbar-brand text-dark" asp-controller="Home" asp-action="Index">SophieBakes</a>
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1"></ul>
+                <ul class="navbar-nav ml-auto">
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                        <li class="nav-item">
+                            <span class="nav-link">Welcome, @user.UserName!</span>
+                        </li>
+                        <li class="nav-item">
+                            <form asp-controller="Account" asp-action="Logout" method="post">
+                                <button type="submit" class="nav-link btn btn-link">Logout</button>
+                            </form>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Feedback" asp-action="Index">Feedback</a>
+                        </li>
+
+                        @if (userRole != "DeliveryBoy") // Hide these for DeliveryBoy
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Checkout" asp-action="MyOrders">My Orders</a>
+                            </li>
+                           
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Cart" asp-action="Index">
+                                    <i class="fas fa-shopping-cart"></i> Cart
+                                    <span class="badge bg-danger" id="cartCount">
+                                        @(Context.Session.GetInt32("CartCount") ?? 0)
+                                    </span>
+                                </a>
+                            </li>
+                        }
+
+                        
+                    }
+                    else
+                    {
+                        <li class="nav-item"><a class="nav-link" asp-action="Login" asp-controller="Account">Login</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-action="Register" asp-controller="Account">Register</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Admin" asp-action="Login">Admin Login/Logout</a>
+                        </li>
+                    }
+
+                    <li class="nav-item">
+                        <a class="btn btn-warning text-dark" asp-controller="Account" asp-action="DeliveryLogin">
+                            Delivery Boy Login
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<div class="container-fluid d-flex align-items-center justify-content-center">
+    <main role="main" class="w-100 pb-3">
+        @RenderBody()
+    </main>
+</div>
+
+<!-- ✅ JavaScript Section (All Scripts in Correct Order) -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-migrate-3.4.0.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/cart.js"></script>
+<script src="~/js/site.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    function updateCartCount() {
+        $.ajax({
+            url: '/Cart/GetCartCount',
+            type: 'GET',
+            success: function (count) {
+                $('#cartCount').text(count);
+            }
+        });
+    }
+
+    // ✅ Automatically update cart count on page load
+    $(document).ready(function () {
+        updateCartCount();
+
+        // ✅ Clear cart when order is successful
+        if (window.location.href.includes("OrderSuccess")) {
+            localStorage.removeItem("cartItems"); // Clear local storage
+            $.ajax({
+                url: '/Cart/ClearCart', // Endpoint to clear cart in DB
+                type: 'POST',
+                success: function () {
+                    updateCartCount();
+                }
+            });
+        }
+    });
+
+    // ✅ Trigger cart update after adding/removing product
+    function itemAddedToCart() {
+        updateCartCount();
+    }
+</script>
+
+
+
+@RenderSection("Scripts", required: false)
+
+</body>
+</html>

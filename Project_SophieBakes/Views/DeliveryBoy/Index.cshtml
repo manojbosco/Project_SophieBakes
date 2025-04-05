@@ -1,0 +1,55 @@
+@using SophieBakes.Models
+@model List<DeliveryOrders>
+
+@{
+    ViewData["Title"] = "Pending Deliveries";
+}
+
+<h2 class="mb-4 text-center">Pending Deliveries</h2>
+
+
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info text-center">No pending orders assigned.</div>
+}
+else
+{
+    <table class="table table-bordered table-hover">
+        <thead class="table-dark">
+        <tr>
+            <th>Order ID</th>
+            <th>Customer</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var order in Model)
+        {
+            <tr>
+                <td>@order.Id</td>
+                <td>@order.CustomerName</td>
+                <td>@order.Address</td>
+                <td>@order.PhoneNumber</td>
+                <td>@order.Status</td>
+                <td>
+                    @if (order.Status != "Delivered")
+                    {
+                        <form asp-action="MarkAsDelivered" asp-controller="DeliveryBoy" method="post">
+                            <input type="hidden" name="id" value="@order.Id" />
+                            <button type="submit" class="btn btn-success btn-sm">Mark as Delivered</button>
+                        </form>
+                    }
+                    else
+                    {
+                        <span class="badge bg-success">Delivered</span>
+                    }
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}

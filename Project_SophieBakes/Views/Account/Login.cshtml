@@ -1,0 +1,131 @@
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model Project_SophieBakes.ViewModel.LoginViewModel
+
+<div class="login-box">
+    <h2 class="text-center">Login</h2>
+
+    <!-- ✅ Correctly placed inside the login view -->
+    <form asp-action="Login" asp-controller="Account" method="post">
+        @Html.AntiForgeryToken() <!-- ✅ Important for security -->
+
+        <div class="form-group">
+            <label>Email:</label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label>Password:</label>
+            <input asp-for="Password" type="password" class="form-control" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <input type="checkbox" asp-for="RememberMe" /> Remember me
+        </div>
+
+        <!-- Replace the default submit button with this one -->
+        <button type="submit" id="loginButton" class="btn btn-primary btn-block">Log In</button>
+
+    </form>
+    <!-- Back Button with Arrow, positioned at bottom-left -->
+    <button onclick="window.history.back();" class="btn btn-secondary btn-lg back-btn">
+        <i class="fa fa-arrow-left"></i> Back
+    </button>
+
+
+    <p class="text-center mt-3">
+        Don't have an account? <a asp-action="Register" asp-controller="Account">Register here</a>
+    </p>
+</div>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            console.log("Login script loaded!");
+
+            $("form").submit(function (event) {
+                event.preventDefault(); // Prevent full page reload
+
+                console.log("Login button clicked!");
+
+                let form = $(this);
+                let formData = form.serialize();
+
+                console.log("Form Data:", formData); // Debugging
+
+                // Get the Anti-Forgery token
+                let token = $("input[name='__RequestVerificationToken']").val();
+
+                // Check form validation
+                if (!form.validate().checkForm()) {
+                    console.log("Validation failed:", form.validate().errorList);
+                    return;
+                }
+
+                // Send AJAX request with CSRF token
+                $.ajax({
+                    type: "POST",
+                    url: form.attr("action"),
+                    data: formData,
+                    headers: {
+                        "RequestVerificationToken": token // ✅ Include CSRF token
+                    },
+                    success: function (response) {
+                        console.log("AJAX Success:", response);
+
+                        if (response.success) {
+                            console.log("Redirecting to:", response.redirectTo);
+                            window.location.href = response.redirectTo;
+                        } else {
+                            console.log("Login failed:", response.message);
+                            alert("Login failed: " + response.message);
+                        }
+                    },
+                    error: function (xhr) {
+                        console.error("AJAX Error:", xhr.responseText);
+                        alert("An error occurred: " + xhr.responseText);
+                    }
+                });
+            });
+        });
+
+
+    </script>
+}
+
+<style>
+    .login-box {
+        width: 350px;
+        margin: 50px auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .login-box h2 {
+        margin-bottom: 20px;
+    }
+
+    .btn-block {
+        width: 100%;
+    }
+    /* Back button styling */
+    .back-btn {
+        position: fixed;
+        left: 20px;
+        bottom: 20px;
+        font-size: 18px;
+        padding: 10px 20px;
+        border-radius: 8px;
+        background-color: #6c757d;
+        color: white;
+        border: none;
+        transition: background 0.3s ease-in-out;
+    }
+</style> 
